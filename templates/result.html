@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+    <style>
+        .high {
+            color: red;
+        }
+        .medium, .low {
+            color: orange;
+        }
+        .no {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Machine</th>
+                <th>Component</th>
+                <th>Parameter</th>
+                <th>Value</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.machine }}</td>
+                <td>{{ result.component }}</td>
+                <td>{{ result.parameter }}</td>
+                <td>{{ result.value }}</td>
+                <td>{{ result.prediction }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
